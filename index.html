@@ -2,41 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Feedback Portal</title>
+    <title>College Placement Portal</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f7f6; padding: 20px; }
-        .form-container { background: white; max-width: 500px; margin: auto; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
-        input, select, textarea { width: 100%; margin-bottom: 15px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        button { background-color: #0056b3; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; width: 100%; }
+        body { font-family: Arial, sans-serif; background-color: #f0f2f5; padding: 20px; }
+        .container { background: white; max-width: 700px; margin: auto; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1, h2 { color: #003366; text-align: center; }
+        .job-card { border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #fafafa; margin-bottom: 20px; }
+        .contact { text-align: center; margin-top: 20px; font-weight: bold; color: #555; }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Student Feedback Form</h2>
-        <!-- Inline script added directly to the form tag -->
-        <form onsubmit="event.preventDefault(); document.getElementById('thankYouMsg').style.display='block';">
-            <label>Student Name:</label> <input type="text" required>
-            <label>Register Number:</label> <input type="text" required>
-            <label>Department:</label> <input type="text" required>
-            <label>Course Name:</label> <input type="text" required>
-            <label>Faculty Name:</label> <input type="text" required>
-            <label>Rating:</label>
-            <select required>
-                <option value="5">Excellent (5)</option>
-                <option value="4">Good (4)</option>
-                <option value="3">Average (3)</option>
-                <option value="2">Poor (2)</option>
-                <option value="1">Very Poor (1)</option>
-            </select>
-            <label>Feedback/Comments:</label> <textarea rows="4" required></textarea>
-            
-            <button type="submit">Submit Feedback</button>
+    <div class="container">
+        <h1>Vellore Institute of Technology Placement Portal</h1>
+        <h2>Department of Computer Science and Information Technology</h2>
+        
+        <!-- Job Listing 1 -->
+        <div class="job-card">
+            <h3 style="color: #d9534f; margin-top: 0;">Company: TechNova Solutions</h3>
+            <p><strong>Job Role:</strong> Software Development Engineer (SDE)</p>
+            <p><strong>Eligibility Criteria:</strong> B.Tech / Integrated M.Tech with 8.0+ CGPA, No active standing arrears.</p>
+            <p><strong>Salary/Package:</strong> 12 LPA (Cost to Company)</p>
+            <p><strong>Application Deadline:</strong> October 25, 2026</p>
+        </div>
 
-            <!-- Message is hidden by default -->
-            <div id="thankYouMsg" style="display: none; margin-top: 20px; padding: 10px; background-color: #d4edda; color: #155724; border-radius: 4px; text-align: center;">
-                <strong>Thank you!</strong> Your feedback helps us improve our courses.
-            </div>
-        </form>
+        <div class="contact">
+            <hr>
+            Placement Contact: placement.cs@vit.ac.in | +91-800-555-0199
+        </div>
     </div>
 </body>
 </html>
