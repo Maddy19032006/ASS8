@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     environment {
@@ -8,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Maddy19032006/ASS8.git'
+                git branch: 'main', url: 'https://github.com/theatomicxm/college-notice-board.git'
             }
         }
         stage('Build Docker Image') {
