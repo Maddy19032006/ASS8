@@ -5,11 +5,6 @@ pipeline {
         IMAGE_NAME = 'theatomicxm/college-notice-board:latest'
     }
     stages {
-        stage('Checkout Code') {
-            steps {
-                git branch: 'main', url: 'https://github.com/theatomicxm/college-notice-board.git'
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 script {
