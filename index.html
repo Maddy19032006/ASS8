@@ -13,7 +13,7 @@
 <body>
     <div class="form-container">
         <h2>Student Feedback Form</h2>
-        <form>
+        <form onsubmit="event.preventDefault(); document.getElementById('thankYouMsg').style.display='block';">
             <label>Student Name:</label> <input type="text" required>
             <label>Register Number:</label> <input type="text" required>
             <label>Department:</label> <input type="text" required>
@@ -28,7 +28,13 @@
                 <option value="1">Very Poor (1)</option>
             </select>
             <label>Feedback/Comments:</label> <textarea rows="4" required></textarea>
+            
             <button type="submit">Submit Feedback</button>
+
+            <!-- Message is hidden by default -->
+            <div id="thankYouMsg" style="display: none; margin-top: 20px; padding: 10px; background-color: #d4edda; color: #155724; border-radius: 4px; text-align: center;">
+                <strong>Thank you!</strong> Your feedback helps us improve our courses.
+            </div>
         </form>
     </div>
 </body>
