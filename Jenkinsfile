@@ -8,7 +8,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("${env.IMAGE_NAME}")
+                    docker.build("${env.IMAGE_NAME}")
                 }
             }
         }
@@ -16,7 +16,8 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-cred') {
-                        dockerImage.push('latest')
+                        // Push the image directly
+                        sh "docker push ${env.IMAGE_NAME}"
                     }
                 }
             }
@@ -24,7 +25,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 withKubeConfig(credentialsId: 'kubeconfig-cred', serverUrl: '') {
-                    sh 'kubectl apply -f deployment.yaml'
+                    bat 'kubectl apply -f deployment.yaml'
                 }
             }
         }
