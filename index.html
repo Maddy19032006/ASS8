@@ -13,7 +13,7 @@
 <body>
     <div class="form-container">
         <h2>Student Feedback Form</h2>
-        <form>
+        <form id="feedbackForm">
             <label>Student Name:</label> <input type="text" required>
             <label>Register Number:</label> <input type="text" required>
             <label>Department:</label> <input type="text" required>
@@ -31,11 +31,19 @@
             
             <button type="submit">Submit Feedback</button>
 
-            <!-- New Feature Added for Task 10 -->
-            <div style="margin-top: 20px; padding: 10px; background-color: #d4edda; color: #155724; border-radius: 4px; text-align: center;">
+            <!-- Message is hidden by default using display: none -->
+            <div id="thankYouMsg" style="display: none; margin-top: 20px; padding: 10px; background-color: #d4edda; color: #155724; border-radius: 4px; text-align: center;">
                 <strong>Thank you!</strong> Your feedback helps us improve our courses.
             </div>
         </form>
     </div>
+
+    <!-- Script to show the message and stop the page from reloading -->
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the page reload (the /? issue)
+            document.getElementById('thankYouMsg').style.display = 'block'; // Shows the message
+        });
+    </script>
 </body>
 </html>
